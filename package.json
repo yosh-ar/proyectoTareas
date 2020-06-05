@@ -1,0 +1,22 @@
+{
+  "name": "proyectotareas",
+  "version": "1.0.0",
+  "description": "Proyecto de tareas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosh-ar/proyectoTareas.git"
+  },
+  "author": "Josue Argueta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yosh-ar/proyectoTareas/issues"
+  },
+  "homepage": "https://github.com/yosh-ar/proyectoTareas#readme",
+  "dependencies": {
+    "yargs": "^15.3.1"
+  }
+}
