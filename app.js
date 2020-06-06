@@ -1,6 +1,6 @@
 let yargs = require('./config/yargs').argv;
 
-let { crear, getDatos } = require('./por-hacer/por-hacer');
+let { crear, getDatos, actualizar } = require('./por-hacer/por-hacer');
 
 let comando = yargs._[0];
 
@@ -11,7 +11,8 @@ switch (comando) {
         console.log(crear(yargs.descripcion));
         break;
     case 'actualizar':
-        console.log('estas en actualizar tareas');
+        let actu = actualizar(yargs.descripcion, yargs.completado);
+        console.log(actu);
         break;
     case 'listar':
         let listado = getDatos();

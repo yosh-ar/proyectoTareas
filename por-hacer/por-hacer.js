@@ -43,7 +43,26 @@ const crear = (descripcion) => {
 
 }
 
+const actualizar = (descripcion, completado = true) => {
+    leerDb();
+
+    // let index = listado.findIndex(tarea => {
+    //     tarea.descripcion === descripcion;
+    // });
+    // return descripcion;
+    let index = listado.findIndex(tarea => tarea.descripcion === descripcion);
+    if (index >= 0) {
+        listado[index].completado = completado;
+        guardarDb();
+        return true;
+    } else {
+        return false;
+    }
+}
+
 module.exports = {
     crear,
-    getDatos
+    getDatos,
+    actualizar
+
 }
