@@ -1,6 +1,6 @@
 let yargs = require('./config/yargs').argv;
 
-let { crear, getDatos, actualizar } = require('./por-hacer/por-hacer');
+let { crear, getDatos, actualizar, borrar } = require('./por-hacer/por-hacer');
 
 let comando = yargs._[0];
 
@@ -23,6 +23,10 @@ switch (comando) {
         } else {
             console.log('no existe informacion en la BD');
         }
+        break;
+    case 'eliminar':
+        let borrado = borrar(yargs.descripcion);
+        console.log(borrado);
         break;
     default:
         console.log('opcion no valida');

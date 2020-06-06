@@ -46,10 +46,6 @@ const crear = (descripcion) => {
 const actualizar = (descripcion, completado = true) => {
     leerDb();
 
-    // let index = listado.findIndex(tarea => {
-    //     tarea.descripcion === descripcion;
-    // });
-    // return descripcion;
     let index = listado.findIndex(tarea => tarea.descripcion === descripcion);
     if (index >= 0) {
         listado[index].completado = completado;
@@ -59,10 +55,27 @@ const actualizar = (descripcion, completado = true) => {
         return false;
     }
 }
+const borrar = (descripcion) => {
+    leerDb();
+
+    let index = listado.filter(tarea => tarea.descripcion !== descripcion);
+
+    if (index.length) {
+        listado = index;
+        guardarDb();
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+
 
 module.exports = {
     crear,
     getDatos,
-    actualizar
+    actualizar,
+    borrar
 
 }

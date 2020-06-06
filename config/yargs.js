@@ -11,6 +11,10 @@ let argv = require('yargs').command('crear', 'crea el listado de tareas', {
             demand: true,
             alias: 'c'
         }
+    }).command('eliminar', 'actualiza las tareas', {
+        descripcion: {
+            alias: 'd'
+        }
     })
     .help()
     .argv;
